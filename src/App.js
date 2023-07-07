@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { Suspense, lazy } from "react";
+import { Route, Routes } from "react-router-dom";
+// import HomePage from "./pages/HomePage";
+const NewsPage = lazy(() => import("./pages/NewsPage"));
+const EnglandPage = lazy(() => import("./pages/EnglandPage"));
+const TransferPage = lazy(() => import("./pages/TransferPage"));
+const Layout = lazy(() => import("./components/layout/Layout"));
+const HomePage = lazy(() => import("./pages/HomePage"));
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense>
+      <Routes>
+        <Route element={<Layout></Layout>}>
+          <Route path="/" element={<HomePage></HomePage>}></Route>
+          <Route path="/moi" element={<NewsPage></NewsPage>}></Route>
+          <Route
+            path="/chuyen-nhuong"
+            element={<TransferPage></TransferPage>}
+          ></Route>
+          <Route path="/anh" element={<EnglandPage></EnglandPage>}></Route>
+        </Route>
+      </Routes>
+    </Suspense>
   );
 }
 
