@@ -2,15 +2,12 @@ import React from "react";
 import LeftColumn from "../components/content/LeftColumn";
 import ContentPage from "../components/content/ContentPage";
 import RightColumn from "../components/content/RightColumn";
+import HeadingPage from "./HeadingPage";
 
 const EnglandPage = () => {
   return (
     <>
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-        <h1 className="bg-[#eee] text-2xl font-bold px-2 py-[10px] grid lg:grid-cols-3 lg:col-span-3">
-          BÓNG ĐÁ ANH
-        </h1>
-      </div>
+      <HeadingPage children=" BÓNG ĐÁ ANH" />
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
         <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:col-span-3">
           <LeftColumn />

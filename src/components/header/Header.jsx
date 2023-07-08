@@ -79,7 +79,7 @@ const Header = () => {
         <div className="lg:w-[1280px] w-full flex items-center justify-between lg:px-0 px-1 h-[60px]">
           <button
             className="text-white focus:outline-none lg:hidden text-grayf1"
-            onClick={toggleNavbar}
+            // onClick={toggleNavbar}
           >
             <svg
               className="w-6 h-6 fill-current"

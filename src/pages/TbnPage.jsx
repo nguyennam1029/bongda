@@ -2,17 +2,14 @@ import React from "react";
 import LeftColumn from "../components/content/LeftColumn";
 import ContentPage from "../components/content/ContentPage";
 import RightColumn from "../components/content/RightColumn";
+import HeadingPage from "./HeadingPage";
 
 const TbnPage = () => {
   return (
     <>
+      <HeadingPage />
       <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-        <h1 className="bg-[#eee] text-2xl font-bold px-2 py-[10px] grid lg:grid-cols-3 lg:col-span-3">
-          BÓNG ĐÁ TÂY BAN NHA
-        </h1>
-      </div>
-      <div className="grid grid-cols-1 gap-5 lg:grid-cols-4">
-        <div className="grid grid-cols-1 gap-5 lg:grid-cols-3 lg:col-span-3">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-3 lg:col-span-3">
           <LeftColumn />
 
           <ContentPage

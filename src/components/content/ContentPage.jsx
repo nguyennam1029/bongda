@@ -12,7 +12,7 @@ const ContentPage = ({
 }) => {
   return (
     <>
-      <div className="col-span-2 ">
+      <div className="order-first col-span-2 md:order-1">
         <Link
           to="/"
           className="relative block mt-3 mb-3 border-b-2 lg:mt-0 border-b-borderD"
@@ -22,8 +22,8 @@ const ContentPage = ({
             <h3 className="my-2 text-xl font-extrabold hover:text-primaryText">
               {headingT}
             </h3>
-            <span>15:48 08/07 </span>
-            <p className="text-[15px] mb-4">{desT}</p>
+            <span className="hidden md:block">15:48 08/07 </span>
+            <p className="text-[15px] mb-4 lg:block hidden">{desT}</p>
           </div>
         </Link>
         <div className="grid grid-cols-1 gap-2 md:gap-4">
@@ -32,19 +32,24 @@ const ContentPage = ({
             .map((item, index) => (
               <>
                 <Link className="flex items-center gap-4">
-                  <img src={urlB} className="w-[240px]" />
+                  <img src={urlB} className="w-[120px] md:w-[240px]" />
                   <div>
-                    <p className="text-lg font-bold">{headingB}</p>
-                    <span className="text-sm text-grayf3">{desB}</span>
+                    <p className="text-base font-bold md:text-lg">{headingB}</p>
+                    <span className="hidden text-sm text-grayf3 md:block">
+                      {desB}
+                    </span>
                   </div>
                 </Link>
                 <Link className="flex items-center gap-4">
-                  <img src="./phan-ung-cua.jpg" className="w-[240px]" />
+                  <img
+                    src="./phan-ung-cua.jpg"
+                    className="w-[120px] md:w-[240px]"
+                  />
                   <div>
-                    <p className="text-lg font-bold">
+                    <p className="text-base font-bold md:text-lg">
                       Phản ứng của tuyển nữ Đức khi thua sốc Zambia
                     </p>
-                    <span className="text-sm text-grayf3">
+                    <span className="hidden text-sm text-grayf3 md:block">
                       Nhiều thành viên tuyển nữ Đức tỏ ra thất vọng sau trận
                       giao hữu thua 2-3 trước Zambia rạng sáng 8/7 (giờ Hà Nội).
                     </span>

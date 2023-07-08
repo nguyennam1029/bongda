@@ -27,7 +27,7 @@ const LeftColumn = ({
 }) => {
   return (
     <div>
-      <div className="border-t-[3px] border-t-primaryText lg:order-first order-last">
+      <div className="border-t-[3px] border-t-primaryText lg:order-first ">
         <Heading>TIN NÓNG</Heading>
         <div className="border border-borderD">
           <Link to="/">
