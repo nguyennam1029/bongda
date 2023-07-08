@@ -99,7 +99,7 @@ const HomePage = () => {
               {Array(6)
                 .fill(0)
                 .map((item, index) => (
-                  <HotProduct key={index}></HotProduct>
+                  <HotProduct key={index} url="andre-onana9.jpg"></HotProduct>
                 ))}
             </div>
           </div>
@@ -136,10 +136,10 @@ const HomePage = () => {
                 </Link>
               </div>
               <div className="grid grid-cols-1 gap-2 md:gap-3 md:grid-cols-2">
-                {Array(4)
+                {Array(2)
                   .fill(0)
                   .map((item, index) => (
-                    <HotProduct key={index}></HotProduct>
+                    <HotProduct key={index} url="andre-onana9.jpg"></HotProduct>
                   ))}
               </div>
             </div>

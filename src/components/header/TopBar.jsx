@@ -2,7 +2,7 @@ import React from "react";
 
 const TopBar = () => {
   return (
-    <div className="flex items-center justify-center bg-white mt-[60px] py-2 shadow-md">
+    <div className="flex items-center justify-center bg-white mt-[60px] py-2 shadow-xl mb-[2px]">
       <div className="lg:w-[1280px] w-full grid md:grid-cols-2 gap-3 grid-cols-1">
         <div className="hidden md:flex md:items-center md:gap-2">
           <p className="text-[#ea0000] font-bold underline">MỚI NHẤT :</p>
