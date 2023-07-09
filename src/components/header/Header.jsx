@@ -19,30 +19,101 @@ const menuLinks = [
   {
     url: "/anh",
     title: "ANH",
+    subMenu: [
+      {
+        name: "Premier League",
+      },
+      {
+        name: "FA Cup",
+      },
+      {
+        name: "AAFE CUP",
+      },
+    ],
   },
   {
     url: "/tbn",
     title: "TBN",
+    subMenu: [
+      {
+        name: "LA LIGA",
+      },
+      {
+        name: "TIN KHÁC",
+      },
+    ],
   },
   {
     url: "/y",
     title: "Ý",
+    subMenu: [
+      {
+        name: "SERIE A",
+      },
+      {
+        name: "TIN KHÁC",
+      },
+    ],
   },
   {
     url: "/contact",
     title: "ĐỨC",
+    subMenu: [
+      {
+        name: "BUNDESLIGA",
+      },
+      {
+        name: "TIN KHÁC",
+      },
+    ],
   },
   {
     url: "/",
     title: "PHÁP",
+    subMenu: [
+      {
+        name: "LIGUE 1",
+      },
+      {
+        name: "TIN KHÁC",
+      },
+    ],
   },
   {
     url: "/moi",
     title: "VIỆT NAM",
+    subMenu: [
+      {
+        name: "CÁC ĐTQG",
+      },
+      {
+        name: "V-LEAGUE",
+      },
+      {
+        name: "CÚP QUỐC GIA",
+      },
+      {
+        name: "HẠNG NHẤT",
+      },
+      {
+        name: "GIẢI TRẺ",
+      },
+      {
+        name: "BÓNG ĐÁ NỮ",
+      },
+    ],
   },
   {
     url: "/chuyen-nhuong",
     title: "CHAMPIONS LEAGUE",
+    subMenu: [
+      {
+        name: "BUNDESLIGA",
+      },
+      {
+        name: "TIN KHÁC",
+      },
+    ],
   },
   {
     url: "/anh",
@@ -134,30 +205,34 @@ const Header = () => {
                 >
                   {item.title}
                 </NavLink>
+
+                {item.subMenu && (
+                  <div className="w-full px-2 py-2 mt-2 rounded-md bg-grayf6 text-grayf1">
+                    <div className="flex flex-col">
+                      {item.subMenu &&
+                        item.subMenu.map((item) => (
+                          <NavLink
+                            to="/"
+                            key={item.name}
+                            className="py-2 ml-1 text-sm uppercase border-b border-b-gray80"
+                          >
+                            {item.name}
+                          </NavLink>
+                        ))}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
-          {/* <span className="text-lg font-bold lg:hidden text-grayf1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              className="w-6 h-6"
-            >
-              <path
-                fillRule="evenodd"
-                d="M3 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 5.25zm0 4.5A.75.75 0 013.75 9h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 9.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75zm0 4.5a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-                clipRule="evenodd"
-              />
-            </svg>
-          </span> */}
+
           <Link to="/">
             <img src="./logobongda.png" className="lg:w-[111px] w-[90px]" />
           </Link>
           <ul className="hidden lg:flex lg:items-center text-grayf1">
             {menuLinks.map((item) => (
               <li
-                className="  text-white font-bold hover:bg-[#e2e2e2] hover:transition-all hover:text-primaryText"
+                className=" relative group text-white font-bold hover:bg-[#e2e2e2] hover:transition-all hover:text-primaryText"
                 key={item.title}
               >
                 <NavLink
@@ -166,6 +241,22 @@ const Header = () => {
                 >
                   {item.title}
                 </NavLink>
+                {item.subMenu && (
+                  <div className="my-element hidden group-hover:block absolute top-[61px] left-0 px-2 py-4 bg-[#e2e2e2] text-[#3e3333] w-40 ">
+                    <div className="flex flex-col gap-3">
+                      {item.subMenu &&
+                        item.subMenu.map((item) => (
+                          <NavLink
+                            to="/"
+                            key={item.name}
+                            className="py-2 uppercase border-b border-b-gray80"
+                          >
+                            {item.name}
+                          </NavLink>
+                        ))}
+                    </div>
+                  </div>
+                )}
               </li>
             ))}
           </ul>
