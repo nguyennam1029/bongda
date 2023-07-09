@@ -79,54 +79,63 @@ const Header = () => {
         <div className="lg:w-[1280px] w-full flex items-center justify-between lg:px-0 px-1 h-[60px]">
           <button
             className="text-white focus:outline-none lg:hidden text-grayf1"
-            // onClick={toggleNavbar}
+            onClick={toggleNavbar}
           >
             <svg
-              className="w-6 h-6 fill-current"
-              viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="w-7 h-7"
             >
-              {isOpen ? (
-                <path
-                  className="text-white"
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M19 10H5V8h14v2zM19 16H5v-2h14v2z"
-                />
-              ) : (
-                <path
-                  className="text-white"
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"
-                />
-              )}
+              <path
+                fillRule="evenodd"
+                d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
+                clipRule="evenodd"
+              />
             </svg>
           </button>
 
           <ul
-            className={`${
-              isOpen ? "lg:flex" : "hidden"
-            } lg:items-center lg:w-auto fixed top-0 left-0 h-full bg-gray-800 w-4/5 z-10 bg-primary transform transition-transform duration-300 ease-in-out`}
+            className={`
+             
+             lg:items-center lg:w-auto fixed top-0 left-0 h-full bg-gray-800 w-4/5 z-40  transform transition-transform duration-300 ease-in-out  bg-[#333333] text-grayf1 font-bold px-4 py-5 overflow-scroll`}
             style={{
-              transform: isOpen ? "translateX(0)" : "translateX(-100%)",
+              transform: isOpen ? "translateX(0)" : "translateX(-110%)",
             }}
           >
-            <li className="mr-3">
-              <a className="text-white hover:text-gray-300" href="#">
-                Menu Item 1
-              </a>
-            </li>
-            <li className="mr-3">
-              <a className="text-white hover:text-gray-300" href="#">
-                Menu Item 2
-              </a>
-            </li>
-            <li className="mr-3">
-              <a className="text-white hover:text-gray-300" href="#">
-                Menu Item 3
-              </a>
-            </li>
+            <p
+              onClick={toggleNavbar}
+              className="absolute top-0 right-0 px-3 py-3"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={1.5}
+                stroke="currentColor"
+                className="w-7 h-7"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </p>
+
+            {menuLinks.map((item) => (
+              <li
+                className="py-2 mt-5 mr-3 border-b border-b-grayf6"
+                key={item.title}
+              >
+                <NavLink
+                  to={item.url}
+                  className="text-white hover:text-gray-300"
+                >
+                  {item.title}
+                </NavLink>
+              </li>
+            ))}
           </ul>
           {/* <span className="text-lg font-bold lg:hidden text-grayf1">
             <svg
