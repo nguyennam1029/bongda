@@ -64,7 +64,9 @@ const Footer = () => {
               <li className="flex items-center gap-2 mt-2 md:gap-4">
                 <span className="text-sm text-[#bbbb]">{item.icon}</span>
                 <strong className="text-sm">{item.title}</strong>
-                <span className="text-sm text-[#bbbb]">{item.info}</span>
+                <span className="text-sm text-[#bbbb] truncat line-clamp-1 overflow-ellipsis">
+                  {item.info}
+                </span>
               </li>
             ))}
           </ul>
