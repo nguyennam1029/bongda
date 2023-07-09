@@ -61,7 +61,7 @@ const Footer = () => {
           <h3 className="text-lg font-bold">LIÊN HỆ:</h3>
           <ul>
             {listContact.map((item) => (
-              <li className="flex items-center gap-4 mt-2">
+              <li className="flex items-center gap-2 mt-2 md:gap-4">
                 <span className="text-sm text-[#bbbb]">{item.icon}</span>
                 <strong className="text-sm">{item.title}</strong>
                 <span className="text-sm text-[#bbbb]">{item.info}</span>
