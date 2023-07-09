@@ -1,32 +1,42 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import IconHome from "../icons/IconHome";
+import IconMap from "../icons/IconMap";
+import IconPhone from "../icons/IconPhone";
+import IconFax from "../icons/IconFax";
+import IconNoti from "../icons/IconNoti";
+import IconEmail from "../icons/IconEmail";
 
 const listContact = [
   {
-    icon: <IconHome></IconHome>,
+    icon: <IconMap></IconMap>,
     title: " Địa chỉ:",
     info: "02 Đinh Tiên Hoàng, P.Đa Kao, Q.1, TP.HCM.",
   },
   {
-    icon: <IconHome></IconHome>,
-    title: " Địa chỉ:",
-    info: "02 Đinh Tiên Hoàng, P.Đa Kao, Q.1, TP.HCM.",
+    icon: <IconPhone></IconPhone>,
+    title: "Điện thoại:",
+    info: " (08) 3910-5017.",
   },
   {
-    icon: <IconHome></IconHome>,
-    title: " Địa chỉ:",
-    info: "02 Đinh Tiên Hoàng, P.Đa Kao, Q.1, TP.HCM.",
+    icon: <IconFax></IconFax>,
+    title: "Fax:",
+    info: "(08) 3910-5019.",
   },
   {
-    icon: <IconHome></IconHome>,
-    title: " Địa chỉ:",
-    info: "02 Đinh Tiên Hoàng, P.Đa Kao, Q.1, TP.HCM.",
+    icon: <IconNoti></IconNoti>,
+    title: "Quảng cáo:",
+    info: " 0909 74 64 28.",
   },
   {
-    icon: <IconHome></IconHome>,
-    title: " Địa chỉ:",
-    info: "02 Đinh Tiên Hoàng, P.Đa Kao, Q.1, TP.HCM.",
+    icon: <IconEmail></IconEmail>,
+    title: "Liên hệ quảng cáo:",
+    info: "quangcao@bongda.com.vn",
+  },
+  {
+    icon: <IconEmail></IconEmail>,
+    title: "Email:",
+    info: "hotro@bongda.com.vn",
   },
 ];
 
@@ -48,10 +58,10 @@ const Footer = () => {
           </p>
         </div>
         <div>
-          <h3>LIÊN HỆ:</h3>
+          <h3 className="text-lg font-bold">LIÊN HỆ:</h3>
           <ul>
             {listContact.map((item) => (
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-4 mt-2">
                 <span className="text-sm text-[#bbbb]">{item.icon}</span>
                 <strong className="text-sm">{item.title}</strong>
                 <span className="text-sm text-[#bbbb]">{item.info}</span>
